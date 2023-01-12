@@ -11,24 +11,24 @@
 </head>
 
 <body class="bg-primary p-2">
-    <nav class="nav justify-content-between p-2 m-5">
+    <nav class="nav justify-content-around p-2 m-5 bg-dark text-light border border-2 border-light rounded">
         <h2>New Dojo</h2>
         <h2>All Dojos</h2>
     </nav>
-    <div class="p-2 justify-content-between m-5">
-        <form action="/add_dojo" method="post" class="bg-dark p-2 text-center form-control">
+    <div class="p-2 justify-content-around m-5 row">
+        <form action="/add_dojo" method="post" class="bg-dark p-2 text-center text-warning rounded border border-light align-items-center h-100 w-25">
             <div class="form-group p-2 m-1">
                 <label for="dojo_name">Name: </label>
                 <input type="text" name="dojo_name">
             </div>
             <input type="submit" value="Create">
         </form>
-        <div class="bg-dark p-2 border border-light">
-            <p>Dojos go here</p>
-            <p>Dojos go here</p>
-            <p>Dojos go here</p>
-            <p>Dojos go here</p>
-            <p>Dojos go here</p>
+        <div class="bg-dark p-2 border border-light text-warning rounded h-100 w-25">
+            <h5 class="text-center">Check out a Dojo!</h5>
+            <hr>
+            {% for dojo in all_dojos %}
+            <li><a href="/show_dojo/{{dojo.id}}">{{ dojo.name }}</a></li>
+            {% endfor %}
         </div>
     </div>
 </body>
