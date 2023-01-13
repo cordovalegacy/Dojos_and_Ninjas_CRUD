@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +9,17 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>One Dojo</title>
 </head>
+
 <body class="bg-primary p-2">
-    <div class="bg-dark p-2 border border-light text-warning rounded h-100 w-50">
+    <div class="bg-dark m-auto p-2 border border-light text-warning rounded h-100 w-50">
         <h5 class="text-center">Check out this Dojo!</h5>
         <hr>
-        <p>{{ dojo.name }}</p>
+        <p>#{{ one_dojo.id }}</p>
+        <p>Dojo Name: {{ one_dojo.name }}</p>
+        <p>Established: {{ one_dojo.created_at }}</p>
+        <p>Renovated: {{ one_dojo.updated_at }}</p>
+        <button class="btn-warning p-1 rounded"><a href="/" class="text-dark text-center">Go Home</a></button>
     </div>
 </body>
+
 </html>

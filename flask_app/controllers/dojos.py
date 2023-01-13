@@ -15,3 +15,10 @@ def add_dojo():
     }
     Dojo.save(data)
     return redirect('/')
+
+@app.route('/show_dojo/<int:id>')
+def show_dojo(id):
+    data = {
+        'id':id
+    }
+    return render_template('show_dojo.html', one_dojo = Dojo.show_dojo(data))

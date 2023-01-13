@@ -21,3 +21,9 @@ class Dojo:
     def save(cls, data):
         query = "INSERT INTO dojos (name, created_at, updated_at) VALUES (%(name)s, NOW(), NOW());"
         return connectToMySQL('dojos_and_ninjas').query_db(query, data)
+
+    @classmethod
+    def show_dojo(cls, data):
+        query = "SELECT * FROM dojos WHERE id = %(id)s"
+        result = connectToMySQL('dojos_and_ninjas').query_db(query, data)
+        return cls(result[0])
