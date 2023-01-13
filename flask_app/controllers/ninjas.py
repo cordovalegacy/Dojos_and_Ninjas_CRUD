@@ -24,8 +24,20 @@ def add_ninja():
 
 @app.route('/edit_ninja/<int:id>')
 def edit_ninja(id):
+    data={
+        'id':id
+    }
+    return render_template('edit_ninja.html', one_ninja = Ninja.display_one_ninja(data))
+
+@app.route('/update_ninja', methods = ['POST'])
+def update_ninja():
+    Ninja.update_ninja(request.form)
     return redirect('/show_ninja_list')
 
 @app.route('/delete_ninja/<int:id>')
 def delete_ninja(id):
+    data={
+        'id':id
+    }
+    Ninja.delete_ninja(data)
     return redirect('/show_ninja_list')

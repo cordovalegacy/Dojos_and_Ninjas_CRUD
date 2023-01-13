@@ -7,6 +7,7 @@ class Dojo:
         self.name = dojo_data['name']
         self.created_at = dojo_data['created_at']
         self.updated_at = dojo_data['updated_at']
+        self.ninjas = []
 
     @classmethod
     def display_dojos(cls):

@@ -6,35 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Edit Ninja</title>
 </head>
 <body class="bg-primary p-2">
     <nav class="nav justify-content-around p-2 m-5 bg-dark text-light border border-2 border-light rounded">
-        <h2>New Ninja</h2>
+        <h2>Edit Ninja</h2>
     </nav>
     <div class="p-2 justify-content-around m-5 row">
-        <form action="/add_ninja" method="post" class=" form-control bg-dark p-2 text-center text-warning rounded border border-light h-100 w-50">
-            <h2>Enter Ninja Details Here</h2>
+        <form action="/update_ninja" method="post" class=" form-control bg-dark p-2 text-center text-warning rounded border border-light h-100 w-50">
+            <h2>What would you like to change?</h2>
+            <input type="hidden" name="id" value="{{one_ninja.id}}" />
             <hr>
             <!-- <label for="dojo_name">Dojo: </label>
             <select class="form-group p-2 m-1">
-                {% for one_dojo in all_dojos %}
-                <option value="{{ one_dojo.id }}">{{one_dojo.name}}</option>
+                {% for one_ninja in ninjas %}
+                <option value="{{ one_ninja.id }}">{{one_ninja.dojo_id}}</option>
                 {% endfor %}
             </select> -->
             <div class="form-group p-2 m-1">
                 <label for="fname">First Name: </label>
-                <input type="text" name="fname">
+                <input type="text" name="fname" value="{{one_ninja.first_name}}">
             </div>
             <div class="form-group p-2 m-1">
                 <label for="lname">Last Name: </label>
-                <input type="text" name="lname">
+                <input type="text" name="lname" value="{{one_ninja.last_name}}">
             </div>
             <div class="form-group p-2 m-1">
                 <label for="age">Age: </label>
-                <input type="text" name="age">
+                <input type="text" name="age" value="{{one_ninja.age}}">
             </div>
-            <input type="submit" value="Create">
+            <input type="submit" value="Submit Changes">
         </form>
     </div>
     <footer class="p-3 justify-content-center row">
