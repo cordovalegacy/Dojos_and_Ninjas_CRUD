@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body class="bg-primary p-2">
+    <nav class="nav justify-content-around p-2 m-5 bg-dark text-light border border-2 border-light rounded">
+        <h2>New Ninja</h2>
+    </nav>
+    <div class="p-2 justify-content-around m-5 row">
+        <form action="/add_ninja" method="post" class=" form-control bg-dark p-2 text-center text-warning rounded border border-light h-100 w-50">
+            <h2>Enter Ninja Details Here</h2>
+            <hr>
+            <label for="dojo_name">Dojo: </label>
+            <select class="form-group p-2 m-1">
+                {% for one_dojo in all_dojos %}
+                <option value="{{ one_dojo.id }}">{{one_dojo.name}}</option>
+                {% endfor %}
+            </select>
+            <div class="form-group p-2 m-1">
+                <label for="fname">First Name: </label>
+                <input type="text" name="fname">
+            </div>
+            <div class="form-group p-2 m-1">
+                <label for="lname">Last Name: </label>
+                <input type="text" name="lname">
+            </div>
+            <div class="form-group p-2 m-1">
+                <label for="age">Age: </label>
+                <input type="text" name="age">
+            </div>
+            <input type="submit" value="Create">
+        </form>
+    </div>
+    <footer class="p-3 justify-content-center row">
+        <button class="btn-warning p-1 mr-5 rounded"><a href="/" class="text-dark text-center">Home</a></button>
+        <button class="btn-warning p-1 ml-5 rounded"><a href="/show_ninja_list" class="text-dark text-center">Ninja List</a></button>
+    </footer>
+</body>
+</html>

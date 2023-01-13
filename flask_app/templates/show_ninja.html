@@ -9,6 +9,9 @@
     <title>Ninja List</title>
 </head>
 <body class="bg-primary p-2">
+    <nav class="nav justify-content-around p-2 m-5 bg-dark text-light border border-2 border-light rounded">
+        <h2>Ninja Database</h2>
+    </nav>
     <table class="table table-hover table-dark table-striped table-bordered border-light">
         <thead>
             <tr>
@@ -33,5 +36,9 @@
             {% endfor %}
         </tbody>
     </table>
+    <footer class="p-3 justify-content-center row">
+        <button class="btn-warning p-1 mr-5 rounded"><a href="/" class="text-dark text-center">Home</a></button>
+        <button class="btn-warning p-1 ml-5 rounded"><a href="/add_ninjas_page" class="text-dark text-center">Add Ninjas</a></button>
+    </footer>
 </body>
 </html>

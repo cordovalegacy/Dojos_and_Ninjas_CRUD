@@ -18,3 +18,8 @@ class Ninja:
         for ninja in results:
             ninjas.append(cls(ninja))
         return ninjas
+
+    @classmethod
+    def add_ninja(cls, data):
+        query = "INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojo_id) VALUES ( %(fname)s, %(lname)s, %(age)s, NOW(), NOW() );"
+        return connectToMySQL('dojos_and_ninjas').query_db(query, data)

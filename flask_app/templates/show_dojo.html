@@ -11,6 +11,9 @@
 </head>
 
 <body class="bg-primary p-2">
+    <nav class="nav justify-content-around p-2 m-5 bg-dark text-light border border-2 border-light rounded">
+        <h2>Dojo Database</h2>
+    </nav>
     <div class="bg-dark m-auto p-2 border border-light text-warning rounded h-100 w-50">
         <h5 class="text-center">Check out this Dojo!</h5>
         <hr>
@@ -18,7 +21,7 @@
         <p>Dojo Name: {{ one_dojo.name }}</p>
         <p>Established: {{ one_dojo.created_at }}</p>
         <p>Renovated: {{ one_dojo.updated_at }}</p>
-        <button class="btn-warning p-1 rounded"><a href="/" class="text-dark text-center">Go Home</a></button>
+        <button class="btn-light p-1 rounded"><a href="/" class="text-dark text-center text-decoration-none">Go Home</a></button>
     </div>
 </body>
 
