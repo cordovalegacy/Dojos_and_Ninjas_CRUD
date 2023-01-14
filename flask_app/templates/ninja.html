@@ -16,12 +16,12 @@
         <form action="/add_ninja" method="post" class=" form-control bg-dark p-2 text-center text-warning rounded border border-light h-100 w-50">
             <h2>Enter Ninja Details Here</h2>
             <hr>
-            <!-- <label for="dojo_name">Dojo: </label>
-            <select class="form-group p-2 m-1">
+            <label for="dojo_id">Dojo: </label>
+            <select name="dojo_id" class="form-group p-2 m-1">
                 {% for one_dojo in all_dojos %}
                 <option value="{{ one_dojo.id }}">{{one_dojo.name}}</option>
                 {% endfor %}
-            </select> -->
+            </select>
             <div class="form-group p-2 m-1">
                 <label for="fname">First Name: </label>
                 <input type="text" name="fname">

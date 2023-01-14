@@ -19,6 +19,7 @@
                 <th scope="col">First</th>
                 <th scope="col">Last</th>
                 <th scope="col">Age</th>
+                <!-- <th scope="col">Bootcamp</th> -->
                 <th scope="col">Actions</th>
             </tr>
         </thead>
@@ -29,6 +30,7 @@
                 <td>{{ ninja.first_name }}</td>
                 <td>{{ ninja.last_name }}</td>
                 <td>{{ ninja.age }}</td>
+                <!-- <td>{{ ninja.dojo.name }}</td> -->
                 <td>
                     <a href="/edit_ninja/{{ninja.id}}">Edit</a> | <a href="/delete_ninja/{{ninja.id}}">Delete</a>
                 </td>

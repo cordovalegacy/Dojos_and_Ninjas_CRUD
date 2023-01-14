@@ -1,4 +1,5 @@
 from flask_app.config.mysqlconnection import connectToMySQL
+from flask_app.models.ninja import Ninja
 
 class Dojo:
 
@@ -23,8 +24,26 @@ class Dojo:
         query = "INSERT INTO dojos (name, created_at, updated_at) VALUES (%(name)s, NOW(), NOW());"
         return connectToMySQL('dojos_and_ninjas').query_db(query, data)
 
+    # @classmethod
+    # def show_dojo(cls, data):
+    #     query = "SELECT * FROM ninjas JOIN dojos on dojos.id = ninjas.dojo_id WHERE dojos.id= %(id)s"
+    #     result = connectToMySQL('dojos_and_ninjas').query_db(query, data)
+    #     print(result)
+    #     return cls(result[0])
+
     @classmethod
-    def show_dojo(cls, data):
-        query = "SELECT * FROM dojos WHERE id = %(id)s"
-        result = connectToMySQL('dojos_and_ninjas').query_db(query, data)
-        return cls(result[0])
+    def show_dojo(cls, data ):
+        query = "SELECT * FROM dojos LEFT JOIN ninjas on dojos.id = ninjas.dojo_id WHERE dojos.id = %(id)s;"
+        results = connectToMySQL('dojos_and_ninjas').query_db(query,data)
+        print(results)
+        dojo = cls(results[0])
+        for table_row in results:
+            dojo.ninjas.append( Ninja({
+                'id': table_row['ninjas.id'],
+                'first_name': table_row['first_name'],
+                'last_name': table_row['last_name'],
+                'age': table_row['age'],
+                'created_at': table_row['ninjas.created_at'],
+                'updated_at': table_row['ninjas.updated_at']
+            }) )
+        return dojo

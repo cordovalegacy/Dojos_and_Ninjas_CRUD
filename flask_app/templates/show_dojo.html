@@ -21,6 +21,12 @@
         <p>Dojo Name: {{ one_dojo.name }}</p>
         <p>Established: {{ one_dojo.created_at }}</p>
         <p>Renovated: {{ one_dojo.updated_at }}</p>
+        <hr>
+        <h6>Students at this Dojo:</h6>
+        {% for ninja in one_dojo.ninjas %}
+        <li><a href="/show_ninjas_list">{{ ninja.first_name }}</a></li>
+        {% endfor %}
+        <hr>
         <button class="btn-light p-1 rounded"><a href="/" class="text-dark text-center text-decoration-none">Go Home</a></button>
     </div>
 </body>
